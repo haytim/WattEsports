@@ -1,0 +1,933 @@
+display_name: '&7Smithing'
+icon: 'ANVIL'
+icon_data: 3510001
+description: '&8Practice Smithing to make tools and equipment of increasingly superior quality'
+
+levelbar_title: '&7Smithing &eLV&e%lv_current% &6%exp_current%&7/&6%exp_next%'
+levelbar_color: 'YELLOW'
+levelbar_style: 'SEGMENTED_6'
+
+# If true, the item's custom durability numbers are hidden from the item. If false, the extra durability is applied
+# as lore on the item.
+hide_durability: false
+
+quality_cosmetic:
+  # If left empty, they won't appear.
+  0: '&cPoor'
+  50: '&7Decent'
+  100: '&7Great'
+  150: '&eEpic'
+  200: '&eLegendary'
+  250: '&6&lDivine'
+  300: '&8&lIncomprehensible'
+
+# Treatments
+hide_treatment_lore: false
+# These treatments include TEMPERING, SHARPENING_FINE, ENGRAVING, and LEATHER_BINDING. As well as ARMOR_FITTING for armor,
+# WAX_COATING for wooden and stone tools,
+treatment_lore:
+  # QUENCHING: '&cQuenched'
+  # TEMPERING: '&7Tempered'
+  # SHARPENING_ROUGH: '&8Rough Sharpened'
+  SHARPENING_FINE: '&7Razor Sharp'
+  # POLISHING: '&7Polished'
+  # ENGRAVING: '&aEngraved'
+  # LEATHER_BINDING: '&6Leather bound'
+  # WAX_COATING: '&eWaxed'
+  ARMOR_FITTING: '&7Well-Fit'
+  HEATING: '&6Red-Hot'
+  SUPERHEATING: '&eWhite-Hot'
+  UNENCHANTABLE: '&cUnenchantable'
+
+scaling_quantity: '0.7/300 * %rating%'
+scaling_minimum: 0
+scaling_maximum: 0.8
+
+# Here you can fill in the formulas used for calculating durability values of items crafted using this custom system
+# The output will be a multiplier, which will be applied on the item's vanilla max durability and made into custom durability
+# "rating" refers to the quality points a player has or at which the item was made. Which will be general quality
+# points + material quality points. The item's rating can be improved ingame through various crafting/improvement methods.
+# General quality points apply to all materials, and each material can have their individual quality points which are then
+# added on top of the general crafting quality.
+# Example: A wooden tool has a max durability of 60, if the outcome of the wood formula is 0.5 its custom durability
+#          will be 30. The x-axis of the resulting graph represents the player's smithing skill, the y-axis the
+#          durability multiplier.
+scaling_durability:
+  wood:
+    scaling: '(9.2/300) * %rating% + 0.8'
+    mode: 'MULTIPLIER'
+    # ADD_ON_DEFAULT instead adds the outcome of the scaling to the attribute's base value.
+    lower_bound: 0
+    upper_bound: 'none'
+  bow:
+    scaling: '(2/300) * %rating% + 0.5'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  crossbow:
+    scaling: '(2.5/300) * %rating% + 0.5'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  leather:
+    scaling: '(5.2/300) * %rating% + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  stone:
+    scaling: '(5.5/280) * (%rating% - 20) + 0.5'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  chainmail:
+    scaling: '(3.5/280) * (%rating% - 20) + 0.5'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  gold:
+    scaling: '(7.7/260) * (%rating% - 40) + 0.3'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  iron:
+    scaling: '(3.6/260) * (%rating% - 40) + 0.4'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  diamond:
+    scaling: '(2.7/240) * (%rating% - 60) + 0.3'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  netherite:
+    scaling: '(2.8/220) * (%rating% - 80) + 0.2'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  prismarine:
+    scaling: '(3.5/260) * (%rating% - 40) + 0.5'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  membrane:
+    scaling: '(2.0/240) * (%rating% - 60) + 0.5'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  other:
+    scaling: '(1.7/300) * %rating% + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+
+# The same as durability, but for damage numbers.
+# Damage numbers are rounded to 1 decimal
+# Damage numbers are only updated once after crafting and again after sharpening
+# Keep in mind these damage values are further updated by the type of tool used to attack
+# Bows are an exception where instead it IS a multiplier translating to arrow velocity instead, which is more damage.
+scaling_damage:
+  wood:
+    scaling: '(1.7/300) * %rating% + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  stone:
+    scaling: '(1.7/280) * (%rating% - 20) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  gold:
+    scaling: '(1.7/260) * (%rating% - 40) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  iron:
+    scaling: '(1.7/260) * (%rating% - 40) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  diamond:
+    scaling: '(1.7/240) * (%rating% - 60) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  netherite:
+    scaling: '(1.7/220) * (%rating% - 80) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  bow:
+    scaling: '(1.2/300) * %rating% + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  crossbow:
+    scaling: '(1.2/300) * %rating% + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  prismarine:
+    scaling: '(1.7/260) * (%rating% - 40) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  other:
+    scaling: '(1.7/300) * %rating% + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+
+scaling_speed:
+  wood:
+    scaling: '(1.2/300) * %rating% + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  stone:
+    scaling: '(1.2/280) * (%rating% - 20) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  gold:
+    scaling: '(1.2/260) * (%rating% - 40) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  iron:
+    scaling: '(1.2/260) * (%rating% - 40) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  diamond:
+    scaling: '(1.2/240) * (%rating% - 60) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  netherite:
+    scaling: '(1.2/220) * (%rating% - 80) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  prismarine:
+    scaling: '(1.2/260) * (%rating% - 40) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  other:
+    scaling: '(1.2/300) * %rating% + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+
+# Stat value multipliers for armor.
+# These stats include knockback resistance (for netherite), toughness, and armor points
+# Updated once after crafting armor, and again after fitting armor.
+# The armor's armor values are multiplied by the outcome of each formula, and rounded to 1 decimal place.
+# Example: If the outcome of diamond armor is 2x, a diamond chestplate will give 16 armor points (8 bars)
+# instead of 8 (4 bars) and 8 toughness instead of 4
+scaling_armor:
+  leather:
+    scaling: '(1.2/300) * %rating% + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  chainmail:
+    scaling: '(1.2/280) * (%rating% - 20) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  gold:
+    scaling: '(1.2/260) * (%rating% - 40) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  iron:
+    scaling: '(1.2/260) * (%rating% - 40) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  diamond:
+    scaling: '(1.2/240) * (%rating% - 60) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  netherite:
+    scaling: '(1.2/220) * (%rating% - 80) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  membrane:
+    scaling: '(1.2/210) * (%rating% - 90) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  other:
+    scaling: '(1.2/300) * %rating% + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+
+scaling_armor_toughness:
+  leather:
+    scaling: '(1.2/300) * %rating% + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  chainmail:
+    scaling: '(1.2/280) * (%rating% - 20) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  gold:
+    scaling: '(1.2/260) * (%rating% - 40) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  iron:
+    scaling: '(1.2/260) * (%rating% - 40) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  diamond:
+    scaling: '(1.2/240) * (%rating% - 60) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  netherite:
+    scaling: '(1.2/220) * (%rating% - 80) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  membrane:
+    scaling: '(1.2/210) * (%rating% - 90) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  other:
+    scaling: '(1.2/300) * %rating% + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+
+scaling_armor_knockbackresist:
+  leather:
+    scaling: '(1.2/300) * %rating% + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  chainmail:
+    scaling: '(1.2/280) * (%rating% - 20) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  gold:
+    scaling: '(1.2/260) * (%rating% - 40) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  iron:
+    scaling: '(1.2/260) * (%rating% - 40) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  diamond:
+    scaling: '(1.2/240) * (%rating% - 60) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  netherite:
+    scaling: '(1.2/220) * (%rating% - 80) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  membrane:
+    scaling: '(1.2/210) * (%rating% - 90) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  other:
+    scaling: '(1.2/300) * %rating% + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+
+scaling_health:
+  wood:
+    scaling: '(1.2/300) * %rating% + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  leather:
+    scaling: '(1.2/300) * %rating% + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  stone:
+    scaling: '(1.2/280) * (%rating% - 20) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  chainmail:
+    scaling: '(1.2/280) * (%rating% - 20) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  gold:
+    scaling: '(1.2/260) * (%rating% - 40) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  iron:
+    scaling: '(1.2/260) * (%rating% - 40) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  diamond:
+    scaling: '(1.2/240) * (%rating% - 60) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  netherite:
+    scaling: '(1.2/220) * (%rating% - 80) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  prismarine:
+    scaling: '(1.2/230) * (%rating% - 70) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  membrane:
+    scaling: '(1.2/210) * (%rating% - 90) + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  bow:
+    scaling: '(1.2/300) * %rating% + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  crossbow:
+    scaling: '(1.2/300) * %rating% + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  other:
+    scaling: '(1.2/300) * %rating% + 0.8'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+
+scaling_movement_speed:
+  wood:
+    scaling: '(0.2/300) * %rating%'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  leather:
+    scaling: '(0.2/300) * %rating%'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  stone:
+    scaling: '(0.2/280) * (%rating% - 20)'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  chainmail:
+    scaling: '(0.2/280) * (%rating% - 20)'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  gold:
+    scaling: '(0.2/260) * (%rating% - 40)'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  iron:
+    scaling: '(0.2/260) * (%rating% - 40)'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  diamond:
+    scaling: '(0.2/240) * (%rating% - 60)'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  netherite:
+    scaling: '(0.2/240) * (%rating% - 60)'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  prismarine:
+    scaling: '(0.2/230) * (%rating% - 70)'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  membrane:
+    scaling: '(0.2/210) * (%rating% - 90)'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  bow:
+    scaling: '(0.2/300) * %rating%'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  crossbow:
+    scaling: '(0.2/300) * %rating%'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  other:
+    scaling: '(0.2/300) * %rating%'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+
+scaling_knockback:
+  wood:
+    scaling: '(0.7/300) * %rating% + 0.1'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  stone:
+    scaling: '(0.7/280) * (%rating% - 20) + 0.1'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  gold:
+    scaling: '(0.7/260) * (%rating% - 40) + 0.1'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  iron:
+    scaling: '(0.7/260) * (%rating% - 40) + 0.1'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  diamond:
+    scaling: '(0.7/240) * (%rating% - 60) + 0.1'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  netherite:
+    scaling: '(0.7/240) * (%rating% - 60) + 0.1'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  prismarine:
+    scaling: '(0.7/230) * (%rating% - 70) + 0.1'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  other:
+    scaling: '(0.7/300) * %rating% + 0.1'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+
+# The fraction of how much durability an item regains when repaired, can't exceed 1.0
+scaling_repair: '(0.7/300) * %rating% + 0.1'
+
+scaling_damage_resistance:
+  wood:
+    scaling: '(1.4/300) * %rating% + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  leather:
+    scaling: '(1.4/300) * %rating% + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  stone:
+    scaling: '(1.4/280) * (%rating% - 20) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  chainmail:
+    scaling: '(1.4/280) * (%rating% - 20) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  gold:
+    scaling: '(1.4/260) * (%rating% - 40) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  iron:
+    scaling: '(1.4/260) * (%rating% - 40) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  diamond:
+    scaling: '(1.4/240) * (%rating% - 60) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  netherite:
+    scaling: '(1.4/220) * (%rating% - 80) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  prismarine:
+    scaling: '(1.4/230) * (%rating% - 70) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  membrane:
+    scaling: '(1.4/210) * (%rating% - 90) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  bow:
+    scaling: '(1.4/300) * %rating% + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  crossbow:
+    scaling: '(1.4/300) * %rating% + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  other:
+    scaling: '(1.4/300) * %rating% + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+
+scaling_explosion_resistance:
+  wood:
+    scaling: '(1.4/300) * %rating% + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  leather:
+    scaling: '(1.4/300) * %rating% + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  stone:
+    scaling: '(1.4/280) * (%rating% - 20) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  chainmail:
+    scaling: '(1.4/280) * (%rating% - 20) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  gold:
+    scaling: '(1.4/260) * (%rating% - 40) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  iron:
+    scaling: '(1.4/260) * (%rating% - 40) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  diamond:
+    scaling: '(1.4/240) * (%rating% - 60) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  netherite:
+    scaling: '(1.4/220) * (%rating% - 80) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  prismarine:
+    scaling: '(1.4/230) * (%rating% - 70) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  membrane:
+    scaling: '(1.4/210) * (%rating% - 90) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  bow:
+    scaling: '(1.4/300) * %rating% + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  crossbow:
+    scaling: '(1.4/300) * %rating% + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  other:
+    scaling: '(1.4/300) * %rating% + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+
+scaling_fire_resistance:
+  wood:
+    scaling: '(1.4/300) * %rating% + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  leather:
+    scaling: '(1.4/300) * %rating% + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  stone:
+    scaling: '(1.4/280) * (%rating% - 20) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  chainmail:
+    scaling: '(1.4/280) * (%rating% - 20) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  gold:
+    scaling: '(1.4/260) * (%rating% - 40) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  iron:
+    scaling: '(1.4/260) * (%rating% - 40) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  diamond:
+    scaling: '(1.4/240) * (%rating% - 60) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  netherite:
+    scaling: '(1.4/220) * (%rating% - 80) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  prismarine:
+    scaling: '(1.4/230) * (%rating% - 70) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  membrane:
+    scaling: '(1.4/210) * (%rating% - 90) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  bow:
+    scaling: '(1.4/300) * %rating% + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  crossbow:
+    scaling: '(1.4/300) * %rating% + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  other:
+    scaling: '(1.4/300) * %rating% + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+
+scaling_poison_resistance:
+  wood:
+    scaling: '(1.4/300) * %rating% + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  leather:
+    scaling: '(1.4/300) * %rating% + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  stone:
+    scaling: '(1.4/280) * (%rating% - 20) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  chainmail:
+    scaling: '(1.4/280) * (%rating% - 20) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  gold:
+    scaling: '(1.4/260) * (%rating% - 40) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  iron:
+    scaling: '(1.4/260) * (%rating% - 40) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  diamond:
+    scaling: '(1.4/240) * (%rating% - 60) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  netherite:
+    scaling: '(1.4/220) * (%rating% - 80) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  prismarine:
+    scaling: '(1.4/230) * (%rating% - 70) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  membrane:
+    scaling: '(1.4/210) * (%rating% - 90) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  bow:
+    scaling: '(1.4/300) * %rating% + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  crossbow:
+    scaling: '(1.4/300) * %rating% + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  other:
+    scaling: '(1.4/300) * %rating% + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+
+scaling_magic_resistance:
+  wood:
+    scaling: '(1.4/300) * %rating% + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  leather:
+    scaling: '(1.4/300) * %rating% + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  stone:
+    scaling: '(1.4/280) * (%rating% - 20) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  chainmail:
+    scaling: '(1.4/280) * (%rating% - 20) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  gold:
+    scaling: '(1.4/260) * (%rating% - 40) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  iron:
+    scaling: '(1.4/260) * (%rating% - 40) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  diamond:
+    scaling: '(1.4/240) * (%rating% - 60) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  netherite:
+    scaling: '(1.4/220) * (%rating% - 80) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  prismarine:
+    scaling: '(1.4/230) * (%rating% - 70) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  membrane:
+    scaling: '(1.4/210) * (%rating% - 90) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  bow:
+    scaling: '(1.4/300) * %rating% + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  crossbow:
+    scaling: '(1.4/300) * %rating% + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  other:
+    scaling: '(1.4/300) * %rating% + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+
+scaling_projectile_resistance:
+  wood:
+    scaling: '(1.4/300) * %rating% + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  leather:
+    scaling: '(1.4/300) * %rating% + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  stone:
+    scaling: '(1.4/280) * (%rating% - 20) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  chainmail:
+    scaling: '(1.4/280) * (%rating% - 20) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  gold:
+    scaling: '(1.4/260) * (%rating% - 40) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  iron:
+    scaling: '(1.4/260) * (%rating% - 40) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  diamond:
+    scaling: '(1.4/240) * (%rating% - 60) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  netherite:
+    scaling: '(1.4/220) * (%rating% - 80) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  prismarine:
+    scaling: '(1.4/230) * (%rating% - 70) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  membrane:
+    scaling: '(1.4/210) * (%rating% - 90) + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  bow:
+    scaling: '(1.4/300) * %rating% + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  crossbow:
+    scaling: '(1.4/300) * %rating% + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'
+  other:
+    scaling: '(1.4/300) * %rating% + 0.1'
+    mode: 'MULTIPLIER'
+    lower_bound: 0
+    upper_bound: 'none'

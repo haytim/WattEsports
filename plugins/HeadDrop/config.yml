@@ -1,0 +1,382 @@
+
+# Thanks for usingDrop.
+# For bug report or suggestion, join https://discord.gg/fV4P2yMSgR
+
+# If Player.Require-Permission = true, player with "headdrop.player" permission will drop on death.
+# Config.Require-Killer-Player = true means Killer need to be player to drop killed mob.
+# If Config.Killer-Require-Permission = true, Player need "headdrop.killer" permission to let entity drop on death.
+# Chances will be ignored if you disable drop.
+# Chance is from 1-100. fraction number will not work.
+
+# %killer% will return player name who killed the mob & %mob% will return mob name which was killed (only work on Bot section)
+
+Config:
+  Version: 4.5
+  Update-Checker: true
+  Require-Killer-Player: true
+  Killer-Require-Permission: false
+  Disable-Worlds:
+  - demoWorld
+  - demoWorld2
+
+Bot:
+  Enable: false
+  WebHook: ''
+  Title: HeadDrop
+  Description: '%killer% killed %mob% and got a!'
+  Footer: HeadDrop by RRS
+
+PLAYER:
+  Drop: true
+  Chance: 100
+  Require-Permission: false
+
+AXOLOTL:
+  Name: Axolotl
+  Drop: true
+  Chance: 10
+
+BAT:
+  Name: Bat
+  Drop: true
+  Chance: 10
+
+BEE:
+  Name: Bee
+  Drop: true
+  Chance: 10
+
+BLAZE:
+  Name: Blaze
+  Drop: true
+  Chance: 10
+
+CAT:
+  Name: Cat
+  Drop: true
+  Chance: 10
+
+DOLPHIN:
+  Name: Dolphin
+  Drop: true
+  Chance: 10
+
+DROWNED:
+  Name: Drowned
+  Drop: true
+  Chance: 10
+
+SPIDER:
+  Name: Spider
+  Drop: true
+  Chance: 10
+
+CAVE_SPIDER:
+  Name: Cave Spider
+  Drop: true
+  Chance: 10
+
+CHICKEN:
+  Name: Chicken
+  Drop: true
+  Chance: 10
+
+ENDERMAN:
+  Name: EnderMan
+  Drop: true
+  Chance: 10
+
+COW:
+  Name: Cow
+  Drop: true
+  Chance: 10
+
+ENDERMITE:
+  Name: EnderMite
+  Drop: true
+  Chance: 10
+
+EVOKER:
+  Name: Evoker
+  Drop: true
+  Chance: 10
+
+DONKEY:
+  Name: Donkey
+  Drop: true
+  Chance: 10
+
+FOX:
+  Name: Fox
+  Drop: true
+  Chance: 10
+
+SHEEP:
+  Name: Sheep
+  Drop: true
+  Chance: 10
+
+GIANT:
+  Name: Giant
+  Drop: true
+  Chance: 10
+
+HOGLIN:
+  Name: Hoglin
+  Drop: true
+  Chance: 10
+
+HUSK:
+  Name: Husk
+  Drop: true
+  Chance: 10
+
+GOAT:
+  Name: Goat
+  Drop: true
+  Chance: 10
+
+IRON_GOLEM:
+  Name: Iron Golem
+  Drop: true
+  Chance: 10
+
+ILLUSIONER:
+  Name: Illusioner
+  Drop: true
+  Chance: 10
+
+HORSE:
+  Name: Horse
+  Drop: true
+  Chance: 10
+
+GUARDIAN:
+  Name: Guardian
+  Drop: true
+  Chance: 10
+
+MUSHROOM_COW:
+  Name: Mushroom Cow
+  Drop: true
+  Chance: 10
+
+OCELOT:
+  Name: Ocelot
+  Drop: true
+  Chance: 10
+
+PHANTOM:
+  Name: Phantom
+  Drop: true
+  Chance: 10
+
+GLOW_SQUID:
+  Name: Glow Squid
+  Drop: true
+  Chance: 10
+
+PIG:
+  Name: Pig
+  Drop: true
+  Chance: 10
+
+LLAMA:
+  Name: LLAMA
+  Drop: true
+  Chance: 10
+
+MULE:
+  Name: Mule
+  Drop: true
+  Chance: 10
+
+PIGLIN:
+  Name: Piglin
+  Drop: true
+  Chance: 10
+
+PIGLIN_BRUTE:
+  Name: Piglin Brute
+  Drop: true
+  Chance: 10
+
+ELDER_GUARDIAN:
+  Name: Elder Guardian
+  Drop: true
+  Chance: 10
+
+PUFFERFISH:
+  Name: Puffer Fish
+  Drop: true
+  Chance: 10
+
+SILVERFISH:
+  Name: Silver Fish
+  Drop: true
+  Chance: 10
+
+POLAR_BEAR:
+  Name: Polar Bear
+  Drop: true
+  Chance: 10
+
+SALMON:
+  Name: Salmon
+  Drop: true
+  Chance: 10
+
+SHULKER:
+  Name: Shulker
+  Drop: true
+  Chance: 10
+
+STRAY:
+  Name: Stray
+  Drop: true
+  Chance: 10
+
+STRIDER:
+  Name: Strider
+  Drop: true
+  Chance: 10
+
+SKELETON_HORSE:
+  Name: Skeleton Horse
+  Drop: true
+  Chance: 10
+
+PILLAGER:
+  Name: Pillager
+  Drop: true
+  Chance: 10
+
+SQUID:
+  Name: Squid
+  Drop: true
+  Chance: 10
+
+WANDERING_TRADER:
+  Name: Wandering Trader
+  Drop: true
+  Chance: 10
+
+TURTLE:
+  Name: Turtle
+  Drop: true
+  Chance: 10
+
+SLIME:
+  Name: Slime
+  Drop: true
+  Chance: 10
+
+COD:
+  Name: Cod
+  Drop: true
+  Chance: 10
+
+RAVAGER:
+  Name: Ravager
+  Drop: true
+  Chance: 10
+
+WITCH:
+  Name: Witch
+  Drop: true
+  Chance: 10
+
+GHAST:
+  Name: Ghast
+  Drop: true
+  Chance: 10
+
+ZOMBIE_HORSE:
+  Name: Zombie Horse
+  Drop: true
+  Chance: 10
+
+WOLF:
+  Name: Wolf
+  Drop: true
+  Chance: 10
+
+VINDICATOR:
+  Name: Vindicator
+  Drop: true
+  Chance: 10
+
+ZOGLIN:
+  Name: Zoglin
+  Drop: true
+  Chance: 10
+
+TRADER_LLAMA:
+  Name: LLama
+  Drop: true
+  Chance: 10
+
+ZOMBIE_VILLAGER:
+  Name: Zombie Villager
+  Drop: true
+  Chance: 10
+
+WITHER:
+  Name: Witch
+  Drop: true
+  Chance: 10
+
+VILLAGER:
+  Name: Villager
+  Drop: true
+  Chance: 10
+
+PARROT:
+  Name: Parrot
+  Drop: true
+  Chance: 10
+
+TROPICAL_FISH:
+  Name: Tropical Fish
+  Drop: true
+  Chance: 10
+
+VEX:
+  Name: Vex
+  Drop: true
+  Chance: 10
+
+ZOMBIFIED_PIGLIN:
+  Name: Zombified Piglin
+  Drop: true
+  Chance: 10
+
+SNOW_GOLEM:
+  Name: Snow Golem
+  Drop: true
+  Chance: 10
+
+RABBIT:
+  Name: Rabbit
+  Drop: true
+  Chance: 10
+
+ALLAY:
+  Name: Allay
+  Drop: true
+  Chance: 10
+
+TADPOLE:
+  Name: Tadpole
+  Drop: true
+  Chance: 10
+
+FROG:
+  Name: Frog
+  Drop: true
+  Chance: 10
+
+WARDEN:
+  Name: Warden
+  Drop: true
+  Chance: 10

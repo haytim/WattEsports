@@ -1,0 +1,11 @@
+xp: 0.0
+health: 20.0
+hunger: 20
+saturation: 5.0
+location:
+  world: Sekanterra
+  x: 1010.5
+  y: 84.0
+  z: 1008.5
+logType: JOIN
+version: v1_19_R1

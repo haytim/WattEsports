@@ -1,0 +1,227 @@
+minor:
+  leader: 396ab114-1bbe-40e9-9b8b-0519ad105ba0
+  dtr: 7
+  color: f
+  members:
+  - 19b8a681-7fc1-4f12-b2f2-e5cd1aed8a54
+  - d38af180-7a0f-4bf0-a32a-28f98a4315ed
+  - 4a7e804f-6073-4a7a-b602-89c63aa16df6
+  - 24660512-c053-4e71-ba32-3477e01b248c
+  - 37ddab61-2c47-43fb-9c3c-4b304f3052b0
+  name: minor
+  description: null
+  claim:
+    world: Sekanterra
+    x: 5131
+    z2: 3583
+    z: 3451
+    x2: 5071
+  home:
+    ==: org.bukkit.Location
+    world: Sekanterra
+    x: 5108.668140334133
+    y: 67.0
+    z: 3493.275441053274
+    pitch: 17.655235
+    yaw: -132.77063
+CHEGG:
+  leader: 7f65c5cc-942d-4854-a4ed-0aed16c7b832
+  dtr: 3
+  color: a
+  members:
+  - c5388bec-d7a5-4054-afec-62aa44c4ec9b
+  name: CHEGG
+  description: null
+  claim:
+    world: Sekanterra
+    x: 3332
+    z2: -2294
+    z: -2339
+    x2: 3382
+  home:
+    ==: org.bukkit.Location
+    world: Sekanterra
+    x: 3353.0744533238003
+    y: 71.0
+    z: -2310.818969410433
+    pitch: 36.49581
+    yaw: 88.48581
+SpudsAndFuds:
+  leader: b16722e4-2a5b-4de8-b532-482e45d5c54d
+  dtr: 8
+  color: d
+  members:
+  - e53080d7-6af6-4f50-9676-6d400516c2ea
+  - 6fa95e81-2556-40f1-afb3-7711c0592f71
+  - f20969c0-2770-4652-8119-2cc569a44d33
+  - d0a9ee70-a245-43c7-9bdc-a14ce46bb6a3
+  - 45486be6-9040-48cc-b26f-a1b49d6a95a2
+  - b16722e4-2a5b-4de8-b532-482e45d5c54d
+  - 26f5e936-1a8a-464b-b609-c52fccb430be
+  - 2934c554-3966-4d73-a611-e5c2540cee2a
+  - 02ff6903-3645-428c-ae74-710afe222dd6
+  - 96956e50-5d0a-44d0-86f4-64410f14fd25
+  name: SpudsAndFuds
+  description: null
+  claim:
+    world: Sekanterra
+    x: 1717
+    z2: 3020
+    z: 3298
+    x2: 1403
+  home:
+    ==: org.bukkit.Location
+    world: Sekanterra
+    x: 1551.9236926126725
+    y: 49.0
+    z: 3209.5202509650176
+    pitch: 2.0641663
+    yaw: 89.77844
+DGTTS:
+  leader: 374b053a-9a05-4eba-9508-83f55463a85c
+  dtr: 2
+  color: f
+  members: []
+  name: DGTTS
+  description: I don't go to the school lmao
+  claim:
+    world: Sekanterra
+    x: -602
+    z2: 1206
+    z: 1224
+    x2: -585
+  home: null
+bingus:
+  leader: ffa48518-39f6-48c6-b9dd-beec711e379e
+  dtr: 6
+  color: '5'
+  members:
+  - ffa48518-39f6-48c6-b9dd-beec711e379e
+  - eda0960a-7736-4ab8-8cfe-2439e18fce39
+  - 7ab1f363-debd-4435-90c9-aa8c2f0d597b
+  - e9ff2d77-f03a-4c7a-966b-99012e191ef5
+  name: bingus
+  description: null
+  claim:
+    world: Sekanterra
+    x: -1451
+    z2: 1943
+    z: 2296
+    x2: -1098
+  home:
+    ==: org.bukkit.Location
+    world: Sekanterra
+    x: -1274.5681996943695
+    y: 79.0625
+    z: 2118.5737992321065
+    pitch: 10.195311
+    yaw: -168.41827
+MobiusWesteras:
+  leader: c51aa98f-e67f-4c38-a6a1-af4f4f82c4c0
+  dtr: 6
+  color: '9'
+  members:
+  - 91c1754b-9d71-48dc-9c92-30c1588673e6
+  - 53a82555-a02b-4c08-a347-9377119a9658
+  - 49b02041-c655-4679-b746-304830468c08
+  - 219d4746-fba4-410d-a60e-9ac8a5936b27
+  name: MobiusWesteras
+  description: Western Lands Merchants Guild
+  claim:
+    world: Sekanterra
+    x: -1130
+    z2: 1536
+    z: 1292
+    x2: -1315
+  home:
+    ==: org.bukkit.Location
+    world: Sekanterra
+    x: -1221.3727133246234
+    y: 68.0
+    z: 1381.2395301829422
+    pitch: 15.666005
+    yaw: 0.6784668
+loner:
+  leader: 3c34d270-9759-4481-84b1-060cf0d36910
+  dtr: 2
+  color: d
+  members: []
+  name: loner
+  description: null
+  claim:
+    world: Sekanterra
+    x: -497
+    z2: 1153
+    z: 1200
+    x2: -524
+  home: null
+FreshVill:
+  leader: 066dcd5b-0016-4bde-b8a7-5aaab2cbadd5
+  dtr: 5
+  color: f
+  members:
+  - 7e3bf268-332c-4dd4-82fc-16ede90d8ab4
+  - 050a5039-1bc1-435d-9803-40320832cf73
+  - 0ab452a7-9890-4441-9288-78e825a29f81
+  name: FreshVill
+  description: null
+  claim:
+    world: Sekanterra
+    x: -723
+    z2: -143
+    z: -40
+    x2: -607
+  home:
+    ==: org.bukkit.Location
+    world: Sekanterra
+    x: -628.5800838130361
+    y: 63.0
+    z: -124.639991492556
+    pitch: 1.9506737
+    yaw: 58.663673
+Jormungandr:
+  leader: b128c50e-0cfc-4643-8bd7-df555f717268
+  dtr: 6
+  color: b
+  members:
+  - d57972ee-179c-43b4-a97b-c87e8d1d1548
+  - c8a9c2d2-0ccf-4fc1-bad8-94a2152de883
+  - ff2a22f0-0514-4d02-aeb4-ffb4e73758dd
+  - 1016fc9f-c752-462d-a808-1e7d6bdf8721
+  name: Jormungandr
+  description: null
+  claim:
+    world: Sekanterra
+    x: 1518
+    z2: 2347
+    z: 2402
+    x2: 1446
+  home:
+    ==: org.bukkit.Location
+    world: Sekanterra
+    x: 1501.9672763249484
+    y: 68.0
+    z: 2389.8794066665864
+    pitch: 29.550444
+    yaw: 48.04649
+AjaxTreesDown:
+  leader: fd6cc8a5-d255-4ef0-a529-837bba75c184
+  dtr: 2
+  color: f
+  members: []
+  name: AjaxTreesDown
+  description: null
+  claim:
+    world: Sekanterra
+    x: -466
+    z2: 1455
+    z: 1440
+    x2: -481
+  home:
+    ==: org.bukkit.Location
+    world: Sekanterra
+    x: -477.6457599831688
+    y: 76.0
+    z: 1452.6426382233146
+    pitch: 0.49969938
+    yaw: -92.818756

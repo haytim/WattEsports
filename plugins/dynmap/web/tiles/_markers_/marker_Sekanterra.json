@@ -1,0 +1,41 @@
+{"sets": {"markers": {"hide": false,"circles": {}
+,"areas": {"area_10": {"fillcolor": "#FF0000","ytop": 64.00,"color": "#FF0000","markup": false,"x": [-466.00,-466.00,-481.00,-481.00]
+,"weight": 3,"z": [1440.00,1455.00,1455.00,1440.00]
+,"ybottom": 64.00,"label": "AjaxTreesDown","opacity": 0.80,"fillopacity": 0.35}
+,"area_1": {"fillcolor": "#FF0000","ytop": 64.00,"color": "#FF0000","markup": false,"x": [3332.00,3332.00,3382.00,3382.00]
+,"weight": 3,"z": [-2294.00,-2339.00,-2339.00,-2294.00]
+,"ybottom": 64.00,"label": "CHEGG","opacity": 0.80,"fillopacity": 0.35}
+,"_worldborder_Sekanterra": {"fillcolor": "#000000","ytop": 64.00,"color": "#FF0000","markup": false,"x": [-23999.50,26000.50,26000.50,-23999.50]
+,"weight": 3,"z": [-23999.50,-23999.50,26000.50,26000.50]
+,"ybottom": 64.00,"label": "Border","opacity": 0.80,"fillopacity": 0.00}
+,"area_5": {"fillcolor": "#FF0000","ytop": 64.00,"color": "#FF0000","markup": false,"x": [-1099.00,-1099.00,-1099.00,-1099.00,-1451.00,-1451.00,-1451.00]
+,"weight": 3,"z": [1944.00,1944.00,2296.00,2296.00,2296.00,2296.00,1944.00]
+,"ybottom": 64.00,"label": "bingus","opacity": 0.80,"fillopacity": 0.35}
+,"area_4": {"fillcolor": "#FF0000","ytop": 64.00,"color": "#FF0000","markup": false,"x": [-602.00,-602.00,-585.00,-585.00]
+,"weight": 3,"z": [1206.00,1224.00,1224.00,1206.00]
+,"ybottom": 64.00,"label": "DGTTS","opacity": 0.80,"fillopacity": 0.35}
+,"area_3": {"fillcolor": "#FF0000","ytop": 64.00,"color": "#FF0000","markup": false,"x": [1717.00,1717.00,1403.00,1403.00]
+,"weight": 3,"z": [3298.00,3020.00,3020.00,3298.00]
+,"ybottom": 64.00,"label": "SpudsAndFuds","opacity": 0.80,"fillopacity": 0.35}
+,"area_2": {"fillcolor": "#FF0000","ytop": 64.00,"color": "#FF0000","markup": false,"x": [1431.00,1431.00,1447.00,1447.00]
+,"weight": 3,"z": [-964.00,-947.00,-947.00,-964.00]
+,"ybottom": 64.00,"label": "minor","opacity": 0.80,"fillopacity": 0.35}
+,"area_9": {"fillcolor": "#FF0000","ytop": 64.00,"color": "#FF0000","markup": false,"x": [1518.00,1518.00,1446.00,1446.00]
+,"weight": 3,"z": [2402.00,2347.00,2347.00,2402.00]
+,"ybottom": 64.00,"label": "Jormungandr","opacity": 0.80,"fillopacity": 0.35}
+,"area_8": {"fillcolor": "#FF0000","ytop": 64.00,"color": "#FF0000","markup": false,"x": [-723.00,-723.00,-607.00,-607.00]
+,"weight": 3,"z": [-40.00,-143.00,-143.00,-40.00]
+,"ybottom": 64.00,"label": "FreshVill","opacity": 0.80,"fillopacity": 0.35}
+,"area_7": {"fillcolor": "#FF0000","ytop": 64.00,"color": "#FF0000","markup": false,"x": [-1330.00,-1330.00,-1117.00,-1117.00]
+,"weight": 3,"z": [1561.00,1310.00,1310.00,1561.00]
+,"ybottom": 64.00,"label": "MobiusWesteras","opacity": 0.80,"fillopacity": 0.35}
+,"area_6": {"fillcolor": "#FF0000","ytop": 64.00,"color": "#FF0000","markup": false,"x": [-497.00,-497.00,-524.00,-524.00]
+,"weight": 3,"z": [1200.00,1153.00,1153.00,1200.00]
+,"ybottom": 64.00,"label": "loner","opacity": 0.80,"fillopacity": 0.35}
+}
+,"label": "Markers","markers": {"_spawn_Sekanterra": {"markup": false,"x": 1000.00,"icon": "world","y": 84.00,"dim": "16x16","z": 1000.00,"label": "Spawn"}
+}
+,"lines": {}
+,"layerprio": 0}
+}
+,"timestamp": 1671494395626}

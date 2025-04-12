@@ -1,0 +1,119 @@
+{
+  "minecraft:recipes/transportation/birch_chest_boat": {
+    "criteria": {
+      "has_boat": "2022-09-07 13:17:01 +0000"
+    },
+    "done": true
+  },
+  "incendium:technical/using/ragnarok": {
+    "criteria": {
+      "log_spam_fixer": "2022-09-07 13:17:01 +0000"
+    },
+    "done": false
+  },
+  "incendium:technical/using/trailblazer": {
+    "criteria": {
+      "log_spam_fixer": "2022-09-07 13:17:01 +0000"
+    },
+    "done": false
+  },
+  "minecraft:recipes/transportation/jungle_chest_boat": {
+    "criteria": {
+      "has_boat": "2022-09-07 13:17:01 +0000"
+    },
+    "done": true
+  },
+  "incendium:technical/scroll_of_returning": {
+    "criteria": {
+      "log_spam_fixer": "2022-09-07 13:17:01 +0000"
+    },
+    "done": false
+  },
+  "incendium:technical/new_player": {
+    "criteria": {
+      "requirement": "2022-09-07 13:17:00 +0000"
+    },
+    "done": true
+  },
+  "dnl:story/general/locate_dungeon": {
+    "criteria": {
+      "locate_hunters_grave": "2022-09-07 13:17:01 +0000",
+      "locate_railway_outpost": "2022-09-07 13:17:01 +0000",
+      "locate_deep_oasis": "2022-09-07 13:17:01 +0000",
+      "locate_gallery_of_illusion": "2022-09-07 13:17:01 +0000",
+      "locate_forgotten_field": "2022-09-07 13:17:01 +0000",
+      "locate_sinkhole": "2022-09-07 13:17:01 +0000",
+      "locate_temple_of_tears": "2022-09-07 13:17:01 +0000",
+      "locate_hivenest": "2022-09-07 13:17:01 +0000",
+      "locate_olympus": "2022-09-07 13:17:01 +0000",
+      "locate_cleric_hideout": "2022-09-07 13:17:01 +0000",
+      "locate_watcher_camp": "2022-09-07 13:17:01 +0000",
+      "locate_crawlers_lair": "2022-09-07 13:17:01 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/brewing/fermented_spider_eye": {
+    "criteria": {
+      "has_spider_eye": "2022-09-07 13:23:13 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/acacia_chest_boat": {
+    "criteria": {
+      "has_boat": "2022-09-07 13:17:01 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/oak_chest_boat": {
+    "criteria": {
+      "has_boat": "2022-09-07 13:17:01 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/mangrove_chest_boat": {
+    "criteria": {
+      "has_boat": "2022-09-07 13:17:01 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/spruce_chest_boat": {
+    "criteria": {
+      "has_boat": "2022-09-07 13:17:01 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/dark_oak_chest_boat": {
+    "criteria": {
+      "has_boat": "2022-09-07 13:17:01 +0000"
+    },
+    "done": true
+  },
+  "incendium:technical/using/shield": {
+    "criteria": {
+      "log_spam_fixer": "2022-09-07 13:17:01 +0000"
+    },
+    "done": false
+  },
+  "dnl:story/general/new_start": {
+    "criteria": {
+      "new start": "2022-09-07 13:17:02 +0000"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:deep_ocean": "2022-09-07 13:24:00 +0000",
+      "minecraft:beach": "2022-09-07 13:24:20 +0000",
+      "minecraft:lukewarm_ocean": "2022-09-07 13:24:07 +0000",
+      "minecraft:river": "2022-09-07 13:23:32 +0000",
+      "minecraft:snowy_plains": "2022-09-07 13:23:34 +0000",
+      "minecraft:jungle": "2022-09-07 13:23:28 +0000",
+      "minecraft:ocean": "2022-09-07 13:24:17 +0000",
+      "minecraft:deep_lukewarm_ocean": "2022-09-07 13:24:04 +0000",
+      "minecraft:old_growth_birch_forest": "2022-09-07 13:34:16 +0000",
+      "minecraft:plains": "2022-09-07 13:17:01 +0000"
+    },
+    "done": false
+  },
+  "DataVersion": 3120
+}

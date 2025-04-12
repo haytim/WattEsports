@@ -1,0 +1,23 @@
+Nim:
+  leader: ffa48518-39f6-48c6-b9dd-beec711e379e
+  dtr: 1
+  color: f
+  members: []
+  name: Nim
+  description: null
+  claim: null
+  home: null
+Spawn:
+  leader: 66e30c16-2a11-4a00-bfa6-a4c03e85306e
+  dtr: 0
+  color: e
+  members: []
+  name: Spawn
+  description: Spawn
+  claim:
+    world: Sekanterra
+    x: 1134
+    z2: 1134
+    z: 866
+    x2: 866
+  home: null

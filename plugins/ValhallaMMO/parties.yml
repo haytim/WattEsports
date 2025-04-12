@@ -1,0 +1,43 @@
+coxyribose:
+  display_name: Coxyribose
+  description: ''
+  leader: 26f5e936-1a8a-464b-b609-c52fccb430be
+  unlocked_item_sharing: true
+  unlocked_exp_sharing: true
+  enabled_item_sharing: true
+  enabled_exp_sharing: true
+  member_limit: 50
+  exp_share_radius: 25
+  exp_sharing_multiplier: 1.0
+  open: false
+  members:
+    26f5e936-1a8a-464b-b609-c52fccb430be: rookie
+expshare:
+  display_name: EXPShare
+  description: ''
+  leader: 02ff6903-3645-428c-ae74-710afe222dd6
+  unlocked_item_sharing: true
+  unlocked_exp_sharing: true
+  enabled_item_sharing: true
+  enabled_exp_sharing: true
+  member_limit: 50
+  exp_share_radius: 25
+  exp_sharing_multiplier: 1.0
+  open: false
+  members:
+    02ff6903-3645-428c-ae74-710afe222dd6: rookie
+dad:
+  display_name: dad
+  description: ''
+  leader: b16722e4-2a5b-4de8-b532-482e45d5c54d
+  unlocked_item_sharing: true
+  unlocked_exp_sharing: true
+  enabled_item_sharing: true
+  enabled_exp_sharing: true
+  member_limit: 50
+  exp_share_radius: 25
+  exp_sharing_multiplier: 1.0
+  open: false
+  members:
+    b16722e4-2a5b-4de8-b532-482e45d5c54d: rookie
+    cdbff2e9-909c-4bd0-b90e-dca77604225f: rookie

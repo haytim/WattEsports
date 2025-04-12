@@ -1,0 +1,8 @@
+spawns: 
+  default: 
+    world: Sekanterra
+    x: 1000.5
+    y: 84.0
+    z: 1000.5
+    yaw: -179.9693
+    pitch: 0.03368461

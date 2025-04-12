@@ -1,0 +1,24 @@
+display_name: '&7Farming'
+icon: 'IRON_HOE'
+icon_data: 3510001
+description: '&8Practice Farming to increase your harvest''s bounty, to collect rare plants and ingredients, and to improve your fishing and livestock farming.'
+
+levelbar_title: '&7Farming &aLV %lv_current% &2%exp_current%&7/&2%exp_next%'
+levelbar_color: 'GREEN'
+levelbar_style: 'SEGMENTED_6'
+
+ultra_harvesting_instant: false
+break_limit_ultra_harvesting: 128
+instant_pickup_ultra_harvesting: true
+
+fishing_luck_of_the_sea_potency: 1.0
+fishing_luck_potency: 0.33
+
+forgiving_multipliers: true
+# if true, the drop amount can not go below 1 so only blocks that drop multiple items (such as redstone ore, lapis lazuli ore,
+# gold/iron ore with fortune) will be affected, but everything else will drop at least 1.
+# This may be set to false if you desire a more grindy experience for your players, though it might be frustrating for them
+
+cosmetic_outline: false
+# this has no functionality, I just think it looks cool. probably not great for performance though idk
+outline_color: '#00ff99'

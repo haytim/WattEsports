@@ -1,0 +1,447 @@
+# PERSISTENCY
+# Database credentials for profile storage
+# If the database credentials are wrong or absent, the plugin will use PersistentDataContainer to store profiles.
+# This means profiles can't be viewed as a whole, only individually, and also can't be edited without using
+# plugin-provided commands. The plugin will also have to use work-arounds to make leaderboards work by temporarily
+# storing certain datapoints in another file (leaderboards.yml).
+db_host: 'host'
+db_database: 'database'
+db_username: 'username'
+db_password: 'password'
+db_port: 3306
+db_ping_delay: 24000
+
+# GENERAL
+
+resource_pack_config_override: false
+# This option can be toggled in-game with /val resourcepack <enable/disable>
+
+metrics: true
+is_spigot: true
+# work on for example PaperMC or Purpur. If you are running on spigot, keep this true. If you are using a fork off spigot,
+# it's recommended to set this to false as it may improve other plugin compatibility
+language: 'en-us'
+profile_version: 0
+# increment this value by 1. If a player's profile version does not match this number, their profiles will be reset upon joining.
+world_blacklist:
+- 'exampleworldlol'
+
+skilltree_arrow_data_n: 3511002
+skilltree_arrow_data_ne: 3511003
+skilltree_arrow_data_e: 3511004
+skilltree_arrow_data_se: 3511005
+skilltree_arrow_data_s: 3511006
+skilltree_arrow_data_sw: 3511007
+skilltree_arrow_data_w: 3511008
+skilltree_arrow_data_nw: 3511001
+
+# If enabled, the player will receive a book (detailed in tutorial_book.yml) on first join. This book will attempt to
+# teach the player some of the plugin's more obscure mechanics, such as the custom crafting mechanics
+book_on_join: true
+
+# Disabled skills are not registered and thus not visible in the skill trees, you can also not gain EXP for them.
+enabled_skills:
+  player: true
+  smithing: true
+  enchanting: true
+  alchemy: true
+  farming: true
+  mining: true
+  landscaping: true
+  trading: true
+  weapons_light: true
+  weapons_heavy: true
+  unarmed: true
+  armor_light: true
+  armor_heavy: true
+  acrobatics: true
+  archery: true
+
+# Disabling listeners will remove some functionality of the plugin. Only do so if you know what you're
+# doing and if they're known to cause issues with other plugins.
+enabled_listeners:
+  interact: true
+                 # Disable if you want the entire custom crafting system gone.
+  join: true
+             # match config version. There's little point in disabling this.
+  item_damage: true
+                    # Disabling will render custom durability useless.
+  item_mend: true
+                  # Disabling will make items stop restoring custom durability if they have mending.
+  shaped_craft: true
+                     # Disabling will remove the ability to use custom shaped crafting recipes.
+  custom_craft: true
+                     # Disabling this will remove custom crafting recipes specifically, not tinker or class-tinker.
+  custom_tinker: true
+                      # Disabling this will remove custom tinker and class-tinker recipes specifically, not crafting.
+  villager_interact: false
+                          # Disabling will remove villager dialogue.
+  projectile_shoot: true
+                         # Disabling will set shooting arrow and potion throwing mechanics to vanilla.
+  entity_damaged: true
+                       # Disabling will remove the plugin's ability to alter damage numbers
+  potion_inventory: true
+                         # Disabling will prevent the player from inserting many items into the stand and custom brewing in general
+  potion_brew: true
+                    # Disabling will re-enable vanilla potion brewing, but this might clash with the custom brewing system.
+  item_consume: true
+                     # Disabling will make food custom foods act like as if they weren't custom at all, and custom potion
+                     # effects will not apply when drank.
+  potion_splash: true
+                      # Disabling will prevent custom splash/lingering potions from applying their effects
+  player_enchant: true
+                       # and level amplification/reduction based on skill. Disabling will remove most functionality from the
+                       # enchanting skill.
+  player_experience: true
+                          # vanilla exp multiplication
+  player_movement: true
+  player_chat: true
+  healing: true
+  blocks: true
+               # skills' functionalities (farming, mining, landscaping).
+  fishing: true
+  breeding: true
+  targeting: true
+
+movement_update_delay: 2000
+# make the plugin lag more. Delay is in milliseconds
+
+# GAMEPLAY
+
+# Items may be given a property that prevents/punishes players for using equipment that is too far above their own skill
+# level. Example: if a level 0 light weapons player uses a 250 quality netherite sword before level x its effect will be
+# greatly reduced
+# The following formula outputs a multiplier that's applied on the given penalties with the purpose to reduce the
+# penalty the closer the player gets to the intended usage level, and remove them once they've reached it.
+# By default, this formula roughly gives the full penalty until the player has reached half the intended level, then it
+# starts reducing more rapidly. At 90%, this penalty is halved. At 96% it's a quarter, at 98% an eighth.
+# %fraction_level% is equal to PLAYERLEVEL / INTENDEDLEVEL, so if an item's intended level is 70 but the player is only
+# level 35, this will be 0.5.
+# Example: a netherite sword is configured to "require" light weapons level 80 to be used properly, the player is only
+# light weapons level 60 so the player is 75% of the way there. The formula with this number outputs 0.9, so the player's
+# damage is (-0.7 * 0.9) = -0.63 = 63% weaker
+# To make this formula less severe I recommend decreasing the exponent (^8) to a lower positive number
+# The output of this formula can never exceed 1 or go below 0
+overleveled_equipment_effectiveness_formula: '-%fraction_level%^8 + 1'
+overleveled_equipment_penalties:
+  durability: 9
+  damage: -0.7
+  speed: -0.5
+  armor: -0.7
+overleveled_warning: 'CHAT'
+# when they are using an overleveled item.
+overleveled_warning_delay: 600000
+
+# COMBAT & DAMAGE
+
+# This affects the "velocity damage multiplier" mechanics specifically
+# The given number is what the entity's velocity is being divided by to determine bonus damage
+# So if an entity gets +10% velocity bonus damage, and their travel velocity is 0.5, having this value set at 0.1 would
+# equate to 0.5/0.1 = 5, 5 * 10% = 50% extra damage.
+# For reference, walking velocity is about 0.23, running speed is 0.3, sprint jumping is 0.37
+velocity_damage_constant: 0.33
+
+# Various skills have abilities that may "stun" targets, which are just a collection of potion effects
+# These potion effects are defined as...
+stun_effects:
+  SLOW: 5
+  SLOW_DIGGING: 5
+  BLINDNESS: 5
+  WEAKNESS: 5
+# After a target is stunned, they may not be stunned again for this amount of time (in milliseconds)
+stun_immunity_frame: 5000
+# Non-player enemies might be able to stun as well, but they don't have a profile to base the stun duration off of
+# How long should enemies be able to stun others for? (in ticks)
+default_stun_duration: 20
+
+# Time frame after a combat action the player will still be considered "in combat" in
+combat_time_frame: 5000
+combat_mobs_only: true
+
+# Various abilities can cause targets to bleed, how long should the delay between bleed damage ticks be (in minecraft ticks)
+bleed_delay: 40
+
+# ValhallaMMO features a parry system, where a successful parry heavily debuffs the parried enemy and reduces the damage
+# taken from the attack, while a failed one puts the parrier at a temporary vulnerability
+parry_enemy_debuffs:
+  FRACTION_ARMOR_REDUCTION: 0.5
+  STUN: 69
+
+parry_failed_debuffs:
+  FRACTION_ARMOR_REDUCTION: 0.25
+  SLOW: 1
+  WEAKNESS: 1
+
+parry_sound: 'BLOCK_IRON_TRAPDOOR_OPEN'
+parry_success_sound: 'ENTITY_ITEM_BREAK'
+parry_failed_sound: 'ITEM_SHIELD_BREAK'
+parry_sparks: true
+
+dodge_effect: 'SWEEP_ATTACK'
+dodge_message: '&fAttack Dodged'
+
+# Damage calculation for armor and armor toughness. Armor is effective only against the given damage sources,
+# everything else is not mitigated by how many armor points you have.
+# Valid arguments are %damage%, %toughness%, and %armor%
+# This default formula doubles the player's effective HP every 10 armor points, or up to 6x eHP at 50 armor,
+# and further reduces heavy damage with toughness. Toughness is not very effective if the player doesn't have
+# a lot of armor or if the player doesn't take very heavy damage. This formula normally breaks at extreme damage numbers,
+# but damage reduction cannot go below a certain fraction to make sure the formula can never go into the negatives
+damage_formula_physical: '%damage% * (10 / (10 + %armor%)) - (%damage%^2 * 0.00005 * %toughness%)'
+damage_formula_mode: 'SET'
+# SET sets physical damage to the outcome of this formula. The outcome cannot go below 0
+# MULTIPLY multiplies the original damage and sets that as the final damage. The outcome cannot go below 0
+damage_reduction_cap: 0.1
+armor_effective_types:
+- 'PROJECTILE'
+- 'ENTITY_ATTACK'
+- 'ENTITY_SWEEP_ATTACK'
+- 'ENTITY_EXPLOSION'
+- 'BLOCK_EXPLOSION'
+- 'CONTACT'
+- 'FALLING_BLOCK'
+- 'LAVA'
+
+# ValhallaMMO features a dodge mechanic, these are its balance options
+prevent_dodge_not_facing_attacker: true
+# they are not facing the attacker
+facing_angle: 70
+# the target to be "facing" the attacker, the effective angle of vision is double this value.
+# example: if this value is 90, the attacker can be anywhere within 180 degrees in front of the target for the target to
+# "see" the shooter. Anywhere outside of that front 180 degrees will be considered "facing away"
+
+# ValhallaMMO also feature a reflect mechanic. Reflect chance is defined by player stats and circumstances
+reflect_damage_type: 'THORNS'
+
+# Damage mitigation obtained from specific enchantments. These mitigations reduce damage before armor comes into play.
+# These mitigations also stack on top of any additional damage mitigation attributes the armor may be given,
+# as example: a protection V chestplate that also has +15% damage mitigations will effectively have 20% damage mitigation
+protection_effectiveness: 0.02
+protection_cap: 0.4
+# so having a combined total of protection 20 will reduce damage taken from any source by 40%
+protection_magic_effectiveness: 0.03
+protection_magic_cap: 0.6
+# so having a combined total of protection 20 will reduce magic damage taken by 60%
+# Magic damage is a damage source that is not reduced by armor or toughness, so this value should be reasonably high
+protection_poison_effectiveness: 0.03
+protection_poison_cap: 0.6
+# so having a combined total of protection 20 will reduce poison damage taken by 60%
+# Poison damage is a damage source that is not reduced by armor or toughness, so this value should be reasonably high
+fire_protection_effectiveness: 0.05
+fire_protection_cap: 1
+# so having a combined total of fire protection 20 will completely prevent fire damage
+# fire protection still reduces the time the wearer will be lit on fire, should they be lit on fire
+projectile_protection_effectiveness: 0.03
+projectile_protection_cap: 0.6
+# (default 3%) so having a combined total of projectile protection 20 will reduce projectile damage by 60%
+blast_protection_effectiveness: 0.04
+blast_protection_cap: 1
+# so having a combined total of blast protection 20 will reduce explosion damage taken by 80%
+feather_falling_effectiveness: 0.18
+feather_falling_cap: 0.9
+# so having a combined total of feather falling 5 will reduce fall damage by 90%
+
+buff_resistance_reduction: 0.2
+
+light_damage_reduction: 0.0
+light_projectile_reduction: 0.0
+light_poison_reduction: 0.0
+light_explosion_reduction: 0.0
+light_fall_reduction: 0.0
+light_fire_reduction: 0.0
+light_melee_reduction: 0.0
+light_magic_reduction: 0.0
+light_knockback_reduction: 0.0
+light_bleeding_reduction: 0.0
+
+heavy_damage_reduction: 0.0
+heavy_projectile_reduction: 0.05
+heavy_poison_reduction: 0.0
+heavy_explosion_reduction: 0.0
+heavy_fall_reduction: 0.0
+heavy_fire_reduction: 0.0
+heavy_melee_reduction: 0.025
+heavy_magic_reduction: 0.0
+heavy_knockback_reduction: 0.05
+heavy_bleeding_reduction: 0.05
+
+# ValhallaMMO changes trident damage to instead scale off its melee damage
+trident_damage_ranged: 1.3
+trident_damage_ranged_loyalty: 1.0
+
+# CRAFTING
+
+old_menu: false
+# and does not show all the tinkering recipes a block has to offer
+
+model_data_nextpage: 3511004
+model_data_prevpage: 3511008
+model_data_craft_view: 3511001
+model_data_tinker_view: 3511002
+
+tool_display_default: '&7Requires a tier &e%tier% &7tool to craft'
+tool_displays:
+  -1: '&7Requires &eGeneric Tool &7to craft'
+
+# If true, items crafted with a custom crafting method will be dropped on top of the crafting block. If false, they will
+# be added to the player's inventory.
+craft_item_drop: true
+
+# Enabling this option allows you to see what an item will look like before really crafting it, however, it will take much longer
+# to load the crafting menu. Disabling will preview the vanilla unmodified item only, but the crafting result will be different
+# than shown.
+# If true, opening the recipes menu will take about 0.5-1 seconds to generate all the items. It might also impact performance more.
+# If false, this will be nearly instant (~50 milliseconds)
+advanced_crafting_preview: true
+
+# Any block materials in this list will have its controls "Inverted", meaning regular right click will open the custom
+# crafting menu and shift right click will open its vanilla menu (if any)
+# By default it's just a block that you can't target to begin with, as example/template to go off of
+swap_crafting_table_functionality:
+- 'LIGHT'
+
+# Disabled crafting recipes
+# An entry in this list is valid if the name equates to a recipe's namespaced key, which in most cases is just
+# the item ID in lowercase
+disabled:
+- 'bow'
+- 'crossbow'
+- 'leather_helmet'
+- 'leather_chestplate'
+- 'leather_leggings'
+- 'leather_boots'
+- 'wooden_pickaxe'
+- 'wooden_axe'
+- 'wooden_shovel'
+- 'wooden_hoe'
+- 'wooden_sword'
+- 'chainmail_helmet'
+- 'chainmail_chestplate'
+- 'chainmail_leggings'
+- 'chainmail_boots'
+- 'stone_pickaxe'
+- 'stone_axe'
+- 'stone_shovel'
+- 'stone_hoe'
+- 'stone_sword'
+- 'golden_helmet'
+- 'golden_chestplate'
+- 'golden_leggings'
+- 'golden_boots'
+- 'golden_pickaxe'
+- 'golden_axe'
+- 'golden_shovel'
+- 'golden_hoe'
+- 'golden_sword'
+- 'iron_helmet'
+- 'iron_chestplate'
+- 'iron_leggings'
+- 'iron_boots'
+- 'iron_pickaxe'
+- 'iron_axe'
+- 'iron_shovel'
+- 'iron_hoe'
+- 'iron_sword'
+- 'diamond_helmet'
+- 'diamond_chestplate'
+- 'diamond_leggings'
+- 'diamond_boots'
+- 'diamond_pickaxe'
+- 'diamond_axe'
+- 'diamond_shovel'
+- 'diamond_hoe'
+- 'diamond_sword'
+- 'netherite_helmet'
+- 'netherite_chestplate'
+- 'netherite_leggings'
+- 'netherite_boots'
+- 'netherite_pickaxe'
+- 'netherite_axe'
+- 'netherite_shovel'
+- 'netherite_hoe'
+- 'netherite_sword'
+
+# PARTIES (NOT IMPLEMENTED YET!!)
+
+parties: true
+item_sharing: true
+exp_sharing: true
+
+party_creation_cooldown: 86400000
+item_share_cooldown: 3600000
+
+name_character_minimum: 2
+name_character_limit: 24
+description_character_limit: 256
+party_chat_format: '&2[PC] &a[%rank%&a] %s &f> %s'
+party_spy_chat_format: '&4[PS] &c[%party%] %s &7> %s'
+name_allow_colors: true
+description_allow_colors: true
+
+party_capacity_default: 50
+exp_sharing_default: true
+item_sharing_default: true
+
+exp_sharing_radius: 25
+exp_sharing_multiplier: 1.0
+# Exp gained by 1 player is shared equally among nearby allies within the radius, and then multiplied by this amount
+
+# The default rank each member will get upon joining
+default_rank: 'rookie'
+leader_title: '&6Chief'
+ranks:
+  rookie:
+    rating: 0
+    title: '&7Rookie'
+    permissions:
+    - 'party_chat'
+    # party_chat, item_share, exp_share, open_party, invite_member, kick_members, manage_roles, manage_description
+  member:
+    rating: 1
+    title: '&7Member'
+    permissions:
+    - 'item_sharing'
+    - 'party_chat'
+  trusted:
+    rating: 2
+    title: '&7Trusted'
+    permissions:
+    - 'invite_member'
+    - 'item_sharing'
+    - 'party_chat'
+  inner_circle:
+    rating: 3
+    title: '&eInner Circle'
+    permissions:
+    - 'invite_member'
+    - 'item_sharing'
+    - 'party_chat'
+    - 'manage_roles'
+    - 'open_party'
+    - 'exp_share'
+    - 'kick_members'
+    - 'manage_description'
+# party_chat: access to party chat
+# item_share: ability to share items with other party members
+# exp_share: ability to toggle exp share on and off for the party
+# open_party: ability to open party or to have party invite only (closed = invite only, open = free join + invite)
+# toggle_item_sharing: ability to toggle item sharing
+# toggle_exp_sharing: ability to toggle exp sharing
+# invite_members: ability to invite other people to the party
+# manage_roles: ability to take and give roles that are below the member's own rank to people with rankings lower than that of their own
+# kick_members: ability to remove members from the party with rankings lower than that of their own
+# manage_description: ability to change the party's description
+# The leader by default has all permissions and is the only one who can transfer leadership
+
+party_info:
+- '&8&m                 [&a%name%&8&m]                 '
+- '&aDescription&7: %description%'
+- ''
+- '&aParty Open&7: &a%status_open%'
+- '&aEXP Sharing&7: &a%status_exp_sharing%'
+- '&aItem Sharing&7: &a%status_item_sharing%'
+- ''
+- '&aYour rank&7: &a%rank%'
+- ''
+- '&7Members (&a%member_count%&7/&a%member_cap%&7)'
+- '&a%member_list%'

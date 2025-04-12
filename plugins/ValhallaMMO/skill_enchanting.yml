@@ -1,0 +1,280 @@
+display_name: '&7Enchanting'
+icon: 'ENCHANTING_TABLE'
+icon_data: 3510001
+description: '&8Practice Enchanting to grant your equipment enchantments of epic strength'
+
+levelbar_title: '&7Enchanting &bLV&b%lv_current% &9%exp_current%&7/&9%exp_next%'
+levelbar_color: 'BLUE'
+levelbar_style: 'SEGMENTED_6'
+
+# Here you can fill in the formulas used for calculating the amplifiers of vanilla and custom enchantments
+# The output will be applied on the item's default enchantment amplifiers
+# "rating" refers to the player's skill points. Which will be general skill points + specific skill points.
+# Example: A wooden tool has a max durability of 60, if the outcome of the wood formula is 0.5 its custom durability
+#          will be 30. The x-axis of the resulting graph represents the player's smithing skill, the y-axis the
+#          durability multiplier.
+
+# For vanilla enchantments the "default" amplifier is considered the amplifiers of the enchantments the item has
+# directly after enchanting with the vanilla system. If a bow got power IV for example, it could be amplified to
+# power VI if the player has 300 "skill" with enchanting
+# For custom enchantments the "default" amplifier is whatever the amplifier was decided to be in the enchanting recipe
+scaling_amplifier:
+  power:
+    scaling: '(4/300) * %rating% - 2'
+    mode: 'ADD_ON_DEFAULT'
+    # ADD_ON_DEFAULT instead adds the outcome of the scaling to the attribute's base value.
+    lower_bound: 0
+    upper_bound: 'none'
+  punch:
+    scaling: '(2/300) * %rating% - 1'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  sharpness:
+    scaling: '(5/300) * %rating% - 2'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  bane_of_arthropods:
+    scaling: '(4/300) * %rating% - 2'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  smite:
+    scaling: '(4/300) * %rating% - 2'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  depth_strider:
+    scaling: '(3/300) * %rating% - 2'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  efficiency:
+    scaling: '(5/300) * %rating% - 2'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  unbreaking:
+    scaling: '(3/300) * %rating% - 2'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  fire_aspect:
+    scaling: '(2/300) * %rating% - 1'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  frost_walker:
+    scaling: '(2/300) * %rating% - 1'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  impaling:
+    scaling: '(4/300) * %rating% - 2'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  knockback:
+    scaling: '(2/300) * %rating% - 1'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  fortune:
+    scaling: '(3/300) * %rating% - 2'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  looting:
+    scaling: '(3/300) * %rating% - 1'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  loyalty:
+    scaling: '(2/300) * %rating% - 1'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  luck:
+    scaling: '(3/300) * %rating% - 1'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  lure:
+    scaling: '(2/300) * %rating% - 1'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  respiration:
+    scaling: '(3/300) * %rating% - 1'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  piercing:
+    scaling: '(4/300) * %rating% - 2'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  protection:
+    scaling: '(4/300) * %rating% - 2'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  projectile_protection:
+    scaling: '(4/300) * %rating% - 2'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  blast_protection:
+    scaling: '(4/300) * %rating% - 2'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  fire_protection:
+    scaling: '(4/300) * %rating% - 2'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  feather_falling:
+    scaling: '(3/300) * %rating% - 2'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  quick_charge:
+    scaling: '(3/300) * %rating% - 2'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  riptide:
+    scaling: '(4/300) * %rating% - 2'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  soul_speed:
+    scaling: '(3/300) * %rating% - 1'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  sweeping_edge:
+    scaling: '(3/300) * %rating% - 2'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  thorns:
+    scaling: '(2/300) * %rating% - 1'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+
+  # CUSTOM ENCHANTMENTS
+  fortify_alchemy_quality:
+    scaling: '(49/300) * %rating%'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  fortify_alchemy_brew_speed:
+    scaling: '(0.14/300) * %rating%'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  fortify_alchemy_ingredient_save:
+    scaling: '(0.32/300) * %rating%'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  fortify_alchemy_potion_save:
+    scaling: '(0.32/300) * %rating%'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  fortify_smithing:
+    scaling: '(49/300) * %rating%'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  fortify_mining_extra_drops:
+    scaling: '(0.24/300) * %rating%'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  fortify_mining_rare_drops:
+    scaling: '(3/300) * %rating%'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  fortify_woodcutting_extra_drops:
+    scaling: '(0.24/300) * %rating%'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  fortify_woodcutting_rare_drops:
+    scaling: '(3/300) * %rating%'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  fortify_farming_extra_drops:
+    scaling: '(0.24/300) * %rating%'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  fortify_farming_rare_drops:
+    scaling: '(0.99/300) * %rating%'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  fortify_farming_fishing_tier:
+    scaling: '(0.49/300) * %rating%'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  fortify_acrobatics:
+    scaling: '(0.49/300) * %rating%'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  fortify_weapons_damage:
+    scaling: '(0.24/300) * %rating%'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  fortify_archery_damage:
+    scaling: '(0.24/300) * %rating%'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  fortify_archery_accuracy:
+    scaling: '(0.49/300) * %rating%'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  fortify_archery_ammo_save:
+    scaling: '(0.32/300) * %rating%'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  fortify_unarmed_damage:
+    scaling: '(0.49/300) * %rating%'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  exp_gained_skill:
+    scaling: '(14/300) * %rating%'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  exp_gained_vanilla:
+    scaling: '(0.24/300) * %rating%'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  damage_taken:
+    scaling: '(0.24/300) * %rating%'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+  damage_dealt:
+    scaling: '(0.09/300) * %rating%'
+    mode: 'ADD_ON_DEFAULT'
+    lower_bound: 0
+    upper_bound: 'none'
+

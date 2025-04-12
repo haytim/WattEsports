@@ -1,0 +1,43 @@
+display_name: '&7Mining'
+icon: 'IRON_PICKAXE'
+icon_data: 3510001
+description: '&8Practice Mining to increase your ore extraction, increase the effectiveness of blast mining, and to gain rare minerals useful in crafting'
+
+levelbar_title: '&7Mining &cLV %lv_current% &4%exp_current%&7/&4%exp_next%'
+levelbar_color: 'RED'
+levelbar_style: 'SEGMENTED_6'
+
+vein_mining_instant: false
+break_limit_vein_mining: 64
+instant_pickup_vein_mining: true
+
+quickmode_toggle_on: '&cOverdrive enabled'
+quickmode_toggle_off: '&cOverdrive disabled'
+
+forgiving_multipliers: true
+# if true, the drop amount can not go below 1 so only blocks that drop multiple items (such as redstone ore, lapis lazuli ore,
+# gold/iron ore with fortune) will be affected, but everything else will drop at least 1.
+# This may be set to false if you desire a more grindy experience for your players, though it might be frustrating for them
+
+remove_tnt_chaining: true
+# detonated drops as an item. Recommended to keep enabled for public servers
+
+cosmetic_outline: false
+# this has no functionality, I just think it looks cool. probably not great for performance though idk
+outline_color: '#ff0000'
+
+quickmode_block_values:
+  # points than usual. unlisted blocks are defined as being worth 1. The more worth a block, the quicker the player loses
+  # saturation, hunger, or health when quick mining them.
+  # This ability also only works on blocks that give the player experience when mined (defined in progression_mining.yml)
+  OBSIDIAN: 30
+  END_STONE: 3
+  DEEPSLATE: 3
+  DEEPSLATE_COAL_ORE: 3
+  DEEPSLATE_IRON_ORE: 3
+  DEEPSLATE_COPPER_ORE: 3
+  DEEPSLATE_GOLD_ORE: 3
+  DEEPSLATE_LAPIS_ORE: 3
+  DEEPSLATE_REDSTONE_ORE: 3
+  DEEPSLATE_DIAMOND_ORE: 3
+  DEEPSLATE_EMERALD_ORE: 3

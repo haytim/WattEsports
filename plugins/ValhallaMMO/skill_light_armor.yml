@@ -1,0 +1,15 @@
+display_name: '&7Light Armor'
+icon: 'LEATHER_CHESTPLATE'
+icon_data: 3510001
+description: '&8Practice Light Armor to improve your evasion and stay protected without sacrificing much mobility.'
+
+levelbar_title: '&7Light Armor &eLV %lv_current% &6%exp_current%&7/&6%exp_next%'
+levelbar_color: 'YELLOW'
+levelbar_style: 'SEGMENTED_6'
+
+adrenaline_effects:
+- 'SPEED;1;200;0.5;50'
+- 'JUMP;1;200;0.5;50'
+- 'REGENERATION;0.5;200;0.5;50'
+- 'DAMAGE_RESISTANCE;0;200;0.25;50'
+  # amplifiers are rounded down, so SPEED 0.5 would not give any speed effect
